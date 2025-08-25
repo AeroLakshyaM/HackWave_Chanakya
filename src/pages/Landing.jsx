@@ -4,6 +4,7 @@ import { useRef, Suspense, useState, useLayoutEffect } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import * as THREE from "three"
+import { Link } from "react-router-dom"
 import bento1 from '../assets/Bento1.jpeg'
 import bento2 from '../assets/Bento2.jpeg'
 
@@ -61,18 +62,18 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="text-2xl font-bold p-4 isolate ">Chanakya</div>
           <div className="hidden md:flex items-center space-x-1 isolate rounded-xl bg-white/20 shadow-lg ring-1 ring-black/5 py-2 px-3">
-            <a
-              href="/auth"
+            <Link
+              to="/auth"
               className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium"
             >
               Startups
-            </a>
-            <a
-              href="/auth"
+            </Link>
+            <Link
+              to="/auth"
               className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium"
             >
               Established Products
-            </a>
+            </Link>
             
             {/* Features Dropdown Wrapper */}
             <div
@@ -80,8 +81,8 @@ const Header = () => {
               onMouseEnter={() => setIsFeaturesOpen(true)}
               onMouseLeave={() => setIsFeaturesOpen(false)}
             >
-              <a
-                href="/auth"
+              <Link
+                to="/auth"
                 className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium flex items-center"
               >
                 Features
@@ -94,7 +95,7 @@ const Header = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-              </a>
+              </Link>
               
               {/* Dropdown Menu - UPDATED for better transitions */}
               <div
@@ -105,44 +106,44 @@ const Header = () => {
                 `}
               >
                 <div className="w-48 bg-white rounded-lg shadow-xl ring-1 ring-black/5 p-2 z-10">
-                  <a href="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
+                  <Link to="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
                     AI Analysis
-                  </a>
-                  <a href="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
+                  </Link>
+                  <Link to="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
                     Market Trends
-                  </a>
-                  <a href="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
+                  </Link>
+                  <Link to="/auth" className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md">
                     Competitor Insights
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
 
-            <a
-              href="/auth"
+            <Link
+              to="/auth"
               className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium"
             >
               Pricing
-            </a>
-            <a
-              href="/auth"
+            </Link>
+            <Link
+              to="/auth"
               className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium"
             >
               Investors
-            </a>
-            <a
-              href="/auth"
+            </Link>
+            <Link
+              to="/auth"
               className="hover:bg-white text-black transition-all px-4 py-2 rounded-full text-sm font-medium"
             >
               Request Demo
-            </a>
+            </Link>
           </div>
           <div className="flex items-center space-x-3">
-            <a href="/auth">
+            <Link to="/auth">
               <button className="bg-black hover:bg-gray-800 text-white font-medium py-2 px-6 rounded-full transition text-sm">
                 Sign Up
               </button>
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
@@ -389,23 +390,23 @@ export default function App() {
                     </div>
 
                     {/* About card - subtle blue accent */}
-                    <a href="/about" className="backdrop-blur-xl bg-gradient-to-br from-blue-400/80 to-blue-200/60 p-5 rounded-2xl border border-blue-200/50 relative overflow-hidden  transition-all duration-300">
+                    <Link to="/about" className="backdrop-blur-xl bg-gradient-to-br from-blue-400/80 to-blue-200/60 p-5 rounded-2xl border border-blue-200/50 relative overflow-hidden  transition-all duration-300">
                       <div className="text-xs text-black font-medium mb-2 tracking-wider">ABOUT US</div>
                       <h3 className="text-base font-semibold text-black">We're Building the Co-pilot for Product Visionaries</h3>
                       <div className="absolute top-3 right-3 w-5 h-5 rounded-lg flex items-center justify-center">
                         <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                       </div>
-                    </a>
+                    </Link>
 
                     {/* Contact card - subtle blue accent */}
-                    <a href="/contact" className="backdrop-blur-xl  p-5 rounded-2xl border-black border-2 bg-black transition-all duration-300 ">
+                    <Link to="/contact" className="backdrop-blur-xl  p-5 rounded-2xl border-black border-2 bg-black transition-all duration-300 ">
                       <div className="text-xs text-white font-medium mb-2 tracking-wider">SUPPORT</div>
                       <h3 className="text-base font-semibold text-white">World-Class Support, Every Step of the Way</h3>
                       <div className="absolute top-3 right-3 w-5 h-5 rounded-lg flex items-center justify-center">
                         <div className="w-2 h-2 bg-white rounded-full"></div>
                       </div>
                       
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -499,29 +500,29 @@ export default function App() {
               <h4 className="font-semibold mb-4">Features</h4>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     AI Assistance
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Website & SEO Tools
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Investor Matching
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Market Analysis
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Version Tracking
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -529,24 +530,24 @@ export default function App() {
               <h4 className="font-semibold mb-4">Resources</h4>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Docs
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Knowledge Base
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Case Studies
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -554,19 +555,19 @@ export default function App() {
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Get Support
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -574,19 +575,19 @@ export default function App() {
               <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-3 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     LinkedIn
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     X / Twitter
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black transition">
+                  <Link to="#" className="hover:text-black transition">
                     Contact Sales
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

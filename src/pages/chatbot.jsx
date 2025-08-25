@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Home, Compass, Library, Puzzle, Users, MessageSquare, Code, Image as ImageIcon, FileText, GraduationCap, Lightbulb, CreditCard, Settings, LogOut, Paperclip, Send, ChevronDown, ChevronRight, MoreHorizontal, X, Bot, User, Loader } from 'lucide-react';
 
 // Main App Component
@@ -43,11 +44,11 @@ const Sidebar = ({ activePage, setActivePage, navigate }) => {
 
 const SidebarNavItem = ({ item, isActive, onClick }) => (
     <li>
-      <a href="#" onClick={onClick} className={`flex items-center space-x-3 p-2 rounded-md text-sm font-medium transition-all duration-200 ${isActive ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100 hover:scale-105'}`}>
+      <Link to="#" onClick={onClick} className={`flex items-center space-x-3 p-2 rounded-md text-sm font-medium transition-all duration-200 ${isActive ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-100 hover:scale-105'}`}>
         <item.icon size={20} />
         <span>{item.label}</span>
         {item.new && <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full ml-auto">New</span>}
-      </a>
+      </Link>
     </li>
 );
 
@@ -374,7 +375,7 @@ const UpgradeBanner = () => (
     <p className="text-sm text-gray-600">
       <span role="img" aria-label="sparkles">✨</span>
       Upgrade to Enterprise for Unlimited Chanakya AI Business Insights
-      <a href="#" className="text-blue-600 font-semibold ml-2 hover:underline">Upgrade now &rarr;</a>
+      <Link to="#" className="text-blue-600 font-semibold ml-2 hover:underline">Upgrade now &rarr;</Link>
     </p>
   </div>
 );
