@@ -1,0 +1,288 @@
+# Appwrite Database Migration for User Profiles
+
+## Database and Collection Setup
+
+```javascript
+const { Client, Databases, ID, Query } = require('node-appwrite');
+
+const client = new Client()
+    .setEndpoint('https://fra.cloud.appwrite.io/v1')
+    .setProject('68a80162002e7f4da4d7');
+
+const databases = new Databases(client);
+
+// Create the user_profiles collection
+async function createUserProfilesCollection() {
+    try {
+        const collection = await databases.createCollection(
+            '68a80162002e7f4da4d7',
+            'user_profiles',
+            'User Profiles'
+        );
+        console.log('Collection created:', collection);
+    } catch (error) {
+        console.log('Collection might already exist:', error.message);
+    }
+}
+```
+
+## Attributes Setup
+
+### 1. userId (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userId',
+    36,
+    true
+);
+```
+
+### 2. userEmail (Email, Required)
+```javascript
+await databases.createEmailAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userEmail',
+    true
+);
+```
+
+### 3. userName (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userName',
+    255,
+    true
+);
+```
+
+### 4. userType (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userType',
+    50,
+    true
+);
+```
+
+### 5. websiteLink (String, Optional)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'websiteLink',
+    500,
+    false
+);
+```
+
+### 6. startupProfile (Boolean, Required)
+```javascript
+await databases.createBooleanAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'startupProfile',
+    true
+);
+```
+
+### 7. establlishedProfile (Boolean, Required)
+```javascript
+await databases.createBooleanAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'establlishedProfile',
+    true
+);
+```
+
+### 8. rawProfileData (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'rawProfileData',
+    15000,
+    true
+);
+```
+
+### 9. createdAt (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'createdAt',
+    255,
+    true
+);
+```
+
+### 10. updatedAt (String, Required)
+```javascript
+await databases.createStringAttribute(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'updatedAt',
+    255,
+    true
+);
+```
+
+## Permissions Setup
+
+```javascript
+// Set read permissions
+await databases.updateCollection(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'User Profiles',
+    ['user:{{user.$id}}'],
+    ['user:{{user.$id}}'],
+    ['user:{{user.$id}}']
+);
+```
+
+## Indexes Setup
+
+```javascript
+// Create indexes for better performance
+await databases.createIndex(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userId_index',
+    'key',
+    ['userId']
+);
+
+await databases.createIndex(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userEmail_index',
+    'key',
+    ['userEmail']
+);
+
+await databases.createIndex(
+    '68a80162002e7f4da4d7',
+    'user_profiles',
+    'userType_index',
+    'key',
+    ['userType']
+);
+```
+
+## Complete Migration Script
+
+```javascript
+const { Client, Databases, ID, Query } = require('node-appwrite');
+
+const client = new Client()
+    .setEndpoint('https://fra.cloud.appwrite.io/v1')
+    .setProject('68a80162002e7f4da4d7')
+    .setKey('your-api-key-here'); // Replace with your API key
+
+const databases = new Databases(client);
+
+async function runMigration() {
+    try {
+        // Create collection
+        await createUserProfilesCollection();
+        
+        // Create attributes
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'userId', 36, true);
+        await databases.createEmailAttribute('68a80162002e7f4da4d7', 'user_profiles', 'userEmail', true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'userName', 255, true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'userType', 50, true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'websiteLink', 500, false);
+        await databases.createBooleanAttribute('68a80162002e7f4da4d7', 'user_profiles', 'startupProfile', true);
+        await databases.createBooleanAttribute('68a80162002e7f4da4d7', 'user_profiles', 'establlishedProfile', true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'rawProfileData', 15000, true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'createdAt', 255, true);
+        await databases.createStringAttribute('68a80162002e7f4da4d7', 'user_profiles', 'updatedAt', 255, true);
+        
+        // Set permissions
+        await databases.updateCollection(
+            '68a80162002e7f4da4d7',
+            'user_profiles',
+            'User Profiles',
+            ['user:{{user.$id}}'],
+            ['user:{{user.$id}}'],
+            ['user:{{user.$id}}']
+        );
+        
+        // Create indexes
+        await databases.createIndex('68a80162002e7f4da4d7', 'user_profiles', 'userId_index', 'key', ['userId']);
+        await databases.createIndex('68a80162002e7f4da4d7', 'user_profiles', 'userEmail_index', 'key', ['userEmail']);
+        await databases.createIndex('68a80162002e7f4da4d7', 'user_profiles', 'userType_index', 'key', ['userType']);
+        
+        console.log('Migration completed successfully!');
+        
+    } catch (error) {
+        console.error('Migration failed:', error);
+    }
+}
+
+// Test document creation
+async function testDocumentCreation() {
+    try {
+        const testDocument = await databases.createDocument(
+            '68a80162002e7f4da4d7',
+            'user_profiles',
+            ID.unique(),
+            {
+                userId: 'test-user-id',
+                userEmail: 'test@example.com',
+                userName: 'Test User',
+                userType: 'startup',
+                websiteLink: 'https://example.com',
+                startupProfile: true,
+                establlishedProfile: false,
+                rawProfileData: JSON.stringify({ test: 'data' }),
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            }
+        );
+        console.log('Test document created:', testDocument);
+    } catch (error) {
+        console.error('Test document creation failed:', error);
+    }
+}
+
+// Run migration
+runMigration().then(() => {
+    // Test document creation after migration
+    setTimeout(testDocumentCreation, 2000);
+});
+```
+
+## Manual Console Setup
+
+If you prefer to set up manually in the Appwrite Console:
+
+1. Go to your Appwrite Console
+2. Navigate to Databases → Your Database (ID: 68a80162002e7f4da4d7)
+3. Click "Add Collection" or edit existing `user_profiles` collection
+4. Add/Update the following attributes:
+
+| Attribute Name | Type | Required | Size/Default |
+|----------------|------|----------|--------------|
+| userId | String | Yes | 36 |
+| userEmail | Email | Yes | - |
+| userName | String | Yes | 255 |
+| userType | String | Yes | 50 |
+| websiteLink | String | No | 500 |
+| startupProfile | Boolean | Yes | - |
+| establlishedProfile | Boolean | Yes | - |
+| rawProfileData | String | Yes | 15000 |
+| createdAt | String | Yes | 255 |
+| updatedAt | String | Yes | 255 |
+
+5. Set permissions: Read/Write/Delete = `user:{{user.$id}}`
+6. Create indexes on: userId, userEmail, userType
