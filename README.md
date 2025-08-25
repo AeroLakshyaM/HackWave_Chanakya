@@ -1,42 +1,63 @@
-# Chanakya  
-_A Multiple AI Agent Web App to Elevate Your Product_  
+<h1 align="center">🌐 Chanakya</h1>
+<p align="center">
+  <em>A Multiple AI Agent Web App to Elevate Your Product</em>  
+</p>
 
-Chanakya is an AI-powered web application built with **Vite** that brings together multiple AI agents to help you refine, scale, and elevate your product. Inspired by the wisdom of ancient strategy, Chanakya empowers businesses, startups, and creators to make smarter decisions with the help of intelligent automation.  
-
----
-
-## 🚀 Features  
-
-- **Multiple AI Agents** – Specialized AI agents for product refinement, market analysis, competitor insights, and strategy.  
-- **Startup Assistance** – Get step-by-step support for launching your startup, including website creation, legal advisory, and financial guidance.  
-- **Product Refinement** – For established products, Chanakya provides AI-driven suggestions for UI/UX, SEO, performance, and feature enhancement.  
-- **Investor Discovery** – Access curated lists of potential investors with details about their interests and domains.  
-- **Market & Competitor Analytics** – Deep insights into competitor activities, trends, and customer expectations.  
-- **Scalable & Modular** – Built on Vite for blazing-fast performance and easy extensibility.  
+<p align="center">
+  <img src="https://img.shields.io/github/license/AnugrahAsh/HackWave_Chanakya?style=for-the-badge" alt="license"/>
+  <img src="https://img.shields.io/github/stars/AnugrahAsh/HackWave_Chanakya?style=for-the-badge" alt="stars"/>
+  <img src="https://img.shields.io/github/forks/AnugrahAsh/HackWave_Chanakya?style=for-the-badge" alt="forks"/>
+  <img src="https://img.shields.io/github/issues/AnugrahAsh/HackWave_Chanakya?style=for-the-badge" alt="issues"/>
+</p>
 
 ---
 
-## 🛠️ Tech Stack  
+## ✨ About
 
-- [Vite](https://vitejs.dev/) – Next-generation frontend tooling.  
-- [React](https://react.dev/) – Modern UI framework.  
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS for styling.  
-- [shadcn/ui](https://ui.shadcn.com/) – Pre-built, customizable UI components.  
-- AI APIs – OpenAI, Gemini, or other integrations.  
+**Chanakya** is a next-generation **AI-powered web app** built with **Vite** that unites multiple AI agents to help you **refine, scale, and elevate your product**.  
+
+Whether you’re a **startup founder** or managing an **established product**, Chanakya acts as your **strategic AI partner**—delivering insights on product refinement, market trends, competitor activity, and even investor discovery.  
+
+> 💡 Inspired by the legendary strategist **Chanakya**, this project empowers modern creators with timeless wisdom, powered by AI.
 
 ---
 
-## 📦 Installation  
+## 🚀 Features
+
+✅ **Multiple AI Agents** – Specialized AI agents for strategy, product refinement, and market analysis.  
+✅ **Startup Assistance** – Website creation, legal advisory, and financial guidance.  
+✅ **Product Refinement** – AI-driven suggestions for UI/UX, SEO, and scaling.  
+✅ **Investor Discovery** – Curated lists of investors with domain interests.  
+✅ **Competitor Analytics** – Monitor competitors and market trends in real-time.  
+✅ **Blazing Performance** – Powered by **Vite** + **React** + **Tailwind CSS**.  
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚡ [Vite](https://vitejs.dev/) – Fast frontend tooling  
+- ⚛️ [React](https://react.dev/) – Modern UI framework  
+- 🎨 [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling  
+- 🧩 [shadcn/ui](https://ui.shadcn.com/) – Beautiful, accessible UI components  
+- 🤖 AI APIs – OpenAI, Gemini, or custom LLM integrations  
+
+---
+
+## 📦 Installation
+
+Clone the repository and get started:  
 
 ```bash
-# Clone the repository
-git clone https://github.com/AnugrahAsh/HackWave_Chanakya
-cd chanakya
+# Clone the repo
+git clone https://github.com/AnugrahAsh/HackWave_Chanakya.git
+
+# Navigate to project
+cd HackWave_Chanakya
 
 # Install dependencies
 npm install
 
-# Run development server
+# Run the development server
 npm run dev
 
 # Build for production
@@ -44,4 +65,3 @@ npm run build
 
 # Preview production build
 npm run preview
-
